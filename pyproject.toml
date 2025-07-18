@@ -1,0 +1,32 @@
+[tool.poetry]
+name = "pydk_generated"
+version = "0.1.0"
+description = "Wrapper SDK with embedded generated API client"
+authors = ["Bartolomej Elias <bartas.elias@gmail.com>"]
+packages = [{ include = "pydk_wrapper" }]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+httpx = ">=0.24.0"
+pydantic = ">=2.0"
+cachetools = "^5.3.3"
+types-cachetools = ">=6.1.0.20250717,<7.0.0.0"
+attrs = ">=22.2.0"
+python-dateutil = "^2.8.0"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.4.1"
+pytest-cov = "^6.2.1"
+pytest-mypy = "^1.0.1"
+ruff = "^0.12.4"
+pytest-asyncio = "^1.1.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.mypy]
+strict = true
+python_version = "3.10"
+namespace_packages = true
+explicit_package_bases = true
